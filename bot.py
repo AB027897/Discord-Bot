@@ -20,4 +20,10 @@ async def on_message(message):
     if message.content == "1":
         response = "Hello"
         await message.channel.send(response)
+
+
+async def on_reaction_add(reaction, user):
+    if reaction.emoji == '✓':
+        await bot.add_roles(reaction, "Team Member")
+
 bot.run(TOKEN)
