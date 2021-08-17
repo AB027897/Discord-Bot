@@ -22,6 +22,7 @@ async def on_message(message):
         await message.channel.send(response)
 
 
+@client.event
 async def on_reaction_add(reaction, user):
     if reaction.emoji == '✓':
         await bot.add_roles(reaction, "Team Member")
